@@ -1,7 +1,7 @@
 ---
 # defaults file for tower
 
-ansible_tower_version: 3.0.3
+ansible_tower_version: 3.2.6
 
 ansible_tower_admin_password: password
 ansible_tower_rabbitmq_password: password

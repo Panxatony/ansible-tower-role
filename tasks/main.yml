@@ -2,7 +2,7 @@
 # tasks file for tower
 - name: Get Tower Install File
   unarchive:
-    src: http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-{{ tower_version }}.tar.gz
+    src: http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-{{ ansible_tower_version }}.tar.gz
     dest: /tmp
     remote_src: True
 - name: Set Passwords for Setup
@@ -14,7 +14,7 @@
   become: true
   shell: ./setup.sh -i /tmp/inventory
   args:
-    chdir: /tmp/ansible-tower-setup-{{ tower_version }}/
+    chdir: /tmp/ansible-tower-setup-{{ ansible_tower_version }}/
     creates: /etc/tower
 - name: Install Pip
   become: true
