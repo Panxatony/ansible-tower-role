@@ -1,17 +1,24 @@
-[primary]
+[tower]
 localhost ansible_connection=local
-
-[secondary]
 
 [database]
 
 [all:vars]
-admin_password='{{ admin_password }}'
-redis_password='{{ redis_password }}'
+admin_password='{{ ansible_tower_admin_password }}'
 
 pg_host=''
 pg_port=''
 
 pg_database='awx'
 pg_username='awx'
-pg_password='{{ postgres_password }}'
+pg_password='{{ ansible_tower_postgres_password }}'
+
+rabbitmq_port=5672
+rabbitmq_vhost=tower
+rabbitmq_username=tower
+rabbitmq_password='{{ ansible_tower_rabbitmq_password }}'
+rabbitmq_cookie=rabbitmqcookie
+
+# Needs to be true for fqdns and ip addresses
+rabbitmq_use_long_name='{{ ansible_tower_rabbitmq_long_name }}'
+# Needs to remain false if you are using localhost

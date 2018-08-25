@@ -1,10 +1,11 @@
 ---
 # defaults file for tower
 
-tower_version: 3.0.3
+ansible_tower_version: 3.0.3
 
-admin_password: password
-redis_password: password
-postgres_password: password
+ansible_tower_admin_password: password
+ansible_tower_rabbitmq_password: password
+ansible_tower_postgres_password: password
 
-install_cli: true
+ansible_tower_rabbitmq_long_name: false
+ansible_tower_install_cli: true

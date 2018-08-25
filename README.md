@@ -12,27 +12,31 @@ For the test.yml file to be used, a license.json file needs to be placed in the 
 
 Role Variables
 --------------
-`license_file_path`
+`ansible_tower_license_file_path`
 - default: blank
 - description: This is a mandatory variable that specifies the path to the license file to be uploaded to Tower after installation.
 
-`tower_version`
+`ansible_tower_version`
 - default: 3.0.3
 - description: This specifies the version of tower to be installed.
 
-`admin_password`
+`ansible_tower_admin_password`
 - default: "password"
 - description: This specifies the administrator password for Tower
 
-`redis_password`
+`ansible_tower_rabbitmq_password`
 - default: "password"
-- description: This specifies the password for the Redis cache
+- description: This specifies the password for the RabbitMQ Service
 
-`postgres_password`
+`ansible_tower_rabbitmq_long_name`
+- default: "false"
+- description: Needs to be true for fqdns and ip addresses
+
+`ansible_tower_postgres_password`
 - default: "password"
 - description: This specifies the password for the PostgreSQL database
 
-`install_cli`
+`ansible_tower_install_cli`
 - default: True
 - description: This specifies whether or not to install and configure the ansible-tower-cli pip package.
 
